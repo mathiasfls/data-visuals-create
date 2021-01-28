@@ -6,6 +6,7 @@ const colors = require('ansi-colors');
 const fs = require('fs-extra');
 const glob = require('fast-glob');
 const puppeteer = require('puppeteer');
+const location = require('chrome-location');
 
 // internal
 const paths = require('../paths');
@@ -24,8 +25,7 @@ const viewportOpts = size => {
 };
 
 // path where chrome is typically installed on MacOS
-const CHROME_INSTALL_PATH =
-  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+const CHROME_INSTALL_PATH = location;
 
 const captureScreenshotOfElement = async (element, imagePath) => {
   try {
